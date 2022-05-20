@@ -25,12 +25,12 @@ function check_semver () {
 
 echo "Building ${NAME} ${VERSION} for ${CODENAME}"
 git checkout --force "v${VERSION}"
-DISABLE_DOCS=1 make bin/skopeo
+DISABLE_DOCS=1 BUILDTAGS=containers_image_openpgp make bin/skopeo
 mkdir -p "/usr/local/${NAME}/${VERSION}/bin"
 cp bin/skopeo "/usr/local/${NAME}/${VERSION}/bin/"
 
 /usr/local/${NAME}/"${VERSION}"/bin/skopeo --version
-
+/usr/local/${NAME}/"${VERSION}"/bin/skopeo inspect docker://registry.fedoraproject.org/fedora:latest | jq -r \'.Name+"@"+.Digest\'
 
 echo "Compressing ${NAME} ${VERSION} for ${CODENAME}-${ARCH}"
 tar -cJf /cache/${NAME}-"${VERSION}"-"${CODENAME}"-"${ARCH}".tar.xz -C /usr/local/${NAME} "${VERSION}"

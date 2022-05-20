@@ -1,0 +1,9 @@
+{
+  "image": "skopeo",
+  "depName": "containers/skopeo",
+  "datasource": "github-releases",
+  "versioning": "semver",
+  "startVersion": "1.0.0",
+  "extractVersion": "^v(?<version>\\d+\\.\\d+\\.\\d+)$",
+  "ignoredVersions": []
+}

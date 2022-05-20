@@ -30,7 +30,7 @@ mkdir -p "/usr/local/${NAME}/${VERSION}/bin"
 cp bin/skopeo "/usr/local/${NAME}/${VERSION}/bin/"
 
 /usr/local/${NAME}/"${VERSION}"/bin/skopeo --version
-/usr/local/${NAME}/"${VERSION}"/bin/skopeo inspect docker://registry.fedoraproject.org/fedora:latest | jq -r \'.Name+"@"+.Digest\'
+/usr/local/${NAME}/"${VERSION}"/bin/skopeo inspect docker://registry.fedoraproject.org/fedora:latest | jq -r '.Name+"@"+.Digest'
 
 echo "Compressing ${NAME} ${VERSION} for ${CODENAME}-${ARCH}"
 tar -cJf /cache/${NAME}-"${VERSION}"-"${CODENAME}"-"${ARCH}".tar.xz -C /usr/local/${NAME} "${VERSION}"

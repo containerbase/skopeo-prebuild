@@ -18,7 +18,7 @@ jobs:
 
     strategy:
       matrix:
-        distro: [focal, bionic]
+        distro: [focal]
         arch: [x86_64]
 
     env:

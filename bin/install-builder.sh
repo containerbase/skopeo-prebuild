@@ -3,6 +3,7 @@
 set -e
 
 install-apt \
+  build-essential \
   libgpgme-dev \
   libassuan-dev \
   libbtrfs-dev \

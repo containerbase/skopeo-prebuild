@@ -5,7 +5,6 @@
     "visualon/renovate-config:automergePatch",
     ":automergeMinor"
   ],
-  "automergeType": "pr",
   "packageRules": [
     {
       "packageNames": ["containers/skopeo"],

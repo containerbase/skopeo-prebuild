@@ -6,7 +6,7 @@
   "repository": "https://github.com/visualon/skopeo-prebuild.git",
   "author": "Michael Kriese <michael.kriese@visualon.de>",
   "engines": {
-    "node": "^16.13.0",
+    "node": "^18.0.0",
     "yarn": "^3.2.0"
   },
   "scripts": {

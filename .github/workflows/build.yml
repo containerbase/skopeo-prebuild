@@ -15,6 +15,9 @@ concurrency:
 env:
   NODE_VERSION: 18.15.0 # renovate: datasource=node depName=node
 
+permissions:
+  contents: read
+
 jobs:
   lint:
     runs-on: ubuntu-latest
@@ -49,6 +52,9 @@ jobs:
     env:
       DISTRO: ${{ matrix.distro }} # build target, name required by binary-builder
       ARCH: ${{ matrix.arch }} # build target, name required by binary-builder
+
+    permissions:
+      contents: write
 
     steps:
       - uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0

@@ -8,7 +8,7 @@ ARG DISTRO=focal
 #--------------------------------------
 FROM ubuntu:bionic@sha256:8aa9c2798215f99544d1ce7439ea9c3a6dfd82de607da1cec3a8a2fae005931b as build-bionic
 FROM ubuntu:focal@sha256:24a0df437301598d1a4b62ddf59fa0ed2969150d70d748c84225e6501e9c36b9 as build-focal
-FROM ghcr.io/containerbase/base:7.8.1@sha256:f93819c8c5328118ed79fe9090f07d8c723fa41bead21255794d777231e3aac2 AS buildpack
+FROM ghcr.io/containerbase/base:7.8.2@sha256:2b5af93fc7a17e41e425f8d5758c3b99464fc4d93ca911e8af567112ac322be7 AS buildpack
 
 #--------------------------------------
 # builder images

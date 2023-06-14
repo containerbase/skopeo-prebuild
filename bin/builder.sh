@@ -4,6 +4,7 @@ set -e
 
 VERSION=${1}
 
+# shellcheck source=/dev/null
 CODENAME=$(. /etc/os-release && echo "${VERSION_CODENAME}")
 
 NAME=skopeo

@@ -7,7 +7,7 @@
   "author": "Michael Kriese <michael.kriese@visualon.de>",
   "engines": {
     "node": "^18.0.0",
-    "yarn": "^3.2.0"
+    "yarn": "^3.0.0"
   },
   "scripts": {
     "lint": "run-s prettier",

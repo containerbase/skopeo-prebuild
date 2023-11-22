@@ -7,7 +7,7 @@
   ],
   "packageRules": [
     {
-      "packageNames": ["containers/skopeo"],
+      "matchPackageNames": ["containers/skopeo"],
       "extractVersion": "^v(?<version>\\d+\\.\\d+\\.\\d+)$"
     }
   ]

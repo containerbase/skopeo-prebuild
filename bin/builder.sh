@@ -26,7 +26,7 @@ function check_semver () {
 
 echo "Building ${NAME} ${VERSION} for ${CODENAME}"
 git checkout --force "v${VERSION}"
-DISABLE_DOCS=1 BUILDTAGS=containers_image_openpgp make bin/skopeo
+DISABLE_DOCS=1 CGO_ENABLED=0 make BUILDTAGS=containers_image_openpgp GO_DYN_FLAGS= bin/skopeo
 mkdir -p "/usr/local/${NAME}/${VERSION}/bin"
 cp bin/skopeo "/usr/local/${NAME}/${VERSION}/bin/"
 

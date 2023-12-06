@@ -30,7 +30,7 @@ RUN install-tool git v2.43.0
 COPY bin /usr/local/bin
 
 # renovate: datasource=docker versioning=docker
-RUN install-tool golang 1.21.4
+RUN install-tool golang 1.21.5
 
 RUN install-builder.sh
 

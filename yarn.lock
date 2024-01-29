@@ -778,9 +778,9 @@ __metadata:
   linkType: hard
 
 "spdx-exceptions@npm:^2.1.0":
-  version: 2.3.0
-  resolution: "spdx-exceptions@npm:2.3.0"
-  checksum: cb69a26fa3b46305637123cd37c85f75610e8c477b6476fa7354eb67c08128d159f1d36715f19be6f9daf4b680337deb8c65acdcae7f2608ba51931540687ac0
+  version: 2.4.0
+  resolution: "spdx-exceptions@npm:2.4.0"
+  checksum: b1b650a8d94424473bf9629cf972c86a91c03cccc260f5c901bce0e4b92d831627fec28c9e0a1e9c34c5ebad0a12cf2eab887bec088e0a862abb9d720c2fd0a1
   languageName: node
   linkType: hard
 
@@ -809,13 +809,13 @@ __metadata:
   linkType: hard
 
 "string-width@npm:^7.0.0":
-  version: 7.0.0
-  resolution: "string-width@npm:7.0.0"
+  version: 7.1.0
+  resolution: "string-width@npm:7.1.0"
   dependencies:
     emoji-regex: ^10.3.0
     get-east-asian-width: ^1.0.0
     strip-ansi: ^7.1.0
-  checksum: bc0de5700a2690895169fce447ec4ed44bc62de80312c2093d5606bfd48319bb88e48a99e97f269dff2bc9577448b91c26b3804c16e7d9b389699795e4655c3b
+  checksum: a183573fe7209e0d294f661846d33f8caf72aa86d983e5b48a0ed45ab15bcccb02c6f0344b58b571988871105457137b8207855ea536827dbc4a376a0f31bf8f
   languageName: node
   linkType: hard
 

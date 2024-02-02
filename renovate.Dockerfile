@@ -8,4 +8,4 @@ FROM scratch
 
 
 # renovate: datasource=github-releases depName=containers/skopeo
-ENV SKOPEO_VERSION=1.14.1
+ENV SKOPEO_VERSION=1.14.2

@@ -6,12 +6,12 @@
   "author": "Michael Kriese <michael.kriese@visualon.de>",
   "scripts": {
     "lint": "run-s prettier",
-    "postinstall": "husky install",
-    "prettier:check": "prettier '{**/*,*}.*' --check --ignore-unknown",
+    "prepare": "husky",
+    "prettier": "prettier '{**/*,*}.*' --check --ignore-unknown",
     "prettier-fix": "prettier '{**/*,*}.*' --write --ignore-unknown"
   },
   "devDependencies": {
-    "husky": "8.0.3",
+    "husky": "9.0.10",
     "lint-staged": "15.2.2",
     "npm-run-all2": "5.0.2",
     "prettier": "2.8.8",

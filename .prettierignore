@@ -16,3 +16,6 @@ yarn.lock
 # yarn v2+
 /.yarn/
 /.pnp.*
+
+/.pnpm-store
+/pnpm-lock.yaml

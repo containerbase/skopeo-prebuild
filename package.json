@@ -7,7 +7,7 @@
   "author": "Michael Kriese <michael.kriese@visualon.de>",
   "engines": {
     "node": "^20.0.0",
-    "yarn": "^3.0.0"
+    "pnpm": "^8.6.11"
   },
   "scripts": {
     "lint": "run-s prettier",
@@ -22,5 +22,5 @@
     "prettier": "2.8.8",
     "prettier-plugin-package": "1.4.0"
   },
-  "packageManager": "yarn@3.8.0"
+  "packageManager": "pnpm@8.15.1"
 }

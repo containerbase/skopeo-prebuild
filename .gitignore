@@ -12,3 +12,5 @@ data/
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+
+/.pnpm-store

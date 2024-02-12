@@ -1,26 +1,25 @@
 {
   "name": "skopeo-prebuild",
-  "version": "1.0.0",
   "private": true,
-  "license": "MIT",
   "repository": "https://github.com/visualon/skopeo-prebuild.git",
+  "license": "MIT",
   "author": "Michael Kriese <michael.kriese@visualon.de>",
-  "engines": {
-    "node": "^20.0.0",
-    "pnpm": "^8.6.11"
-  },
   "scripts": {
     "lint": "run-s prettier",
     "postinstall": "husky install",
-    "prettier:check": "prettier \"{**/*,*}.*\" --check --ignore-unknown",
-    "prettier:fix": "prettier \"{**/*,*}.*\" --write --ignore-unknown"
+    "prettier:check": "prettier '{**/*,*}.*' --check --ignore-unknown",
+    "prettier-fix": "prettier '{**/*,*}.*' --write --ignore-unknown"
   },
   "devDependencies": {
     "husky": "8.0.3",
     "lint-staged": "15.2.2",
     "npm-run-all2": "5.0.2",
     "prettier": "2.8.8",
-    "prettier-plugin-package": "1.4.0"
+    "prettier-plugin-packagejson": "2.4.10"
   },
-  "packageManager": "pnpm@8.15.1"
+  "packageManager": "pnpm@8.15.1",
+  "engines": {
+    "node": ">=20.9.0",
+    "pnpm": "^8.0.0"
+  }
 }

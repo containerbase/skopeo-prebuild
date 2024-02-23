@@ -25,7 +25,7 @@ COPY --from=containerbase /usr/local/containerbase/ /usr/local/containerbase/
 RUN install-containerbase
 
 # renovate: datasource=github-tags lookupName=git/git
-RUN install-tool git v2.43.3
+RUN install-tool git v2.44.0
 
 COPY bin /usr/local/bin
 

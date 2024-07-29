@@ -20,14 +20,14 @@ SHELL ["/bin/bash" , "-c"]
 
 ENTRYPOINT [ "dumb-init", "--", "builder.sh" ]
 
-COPY --from=containerbase /usr/local/bin/ /usr/local/bin/
+COPY --from=containerbase /usr/local/sbin/ /usr/local/sbin/
 COPY --from=containerbase /usr/local/containerbase/ /usr/local/containerbase/
 RUN install-containerbase
 
 # renovate: datasource=github-tags lookupName=git/git
 RUN install-tool git v2.45.2
 
-COPY bin /usr/local/bin
+COPY bin /usr/local/sbin
 
 # renovate: datasource=docker versioning=docker
 RUN install-tool golang 1.22.5

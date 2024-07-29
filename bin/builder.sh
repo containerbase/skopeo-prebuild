@@ -4,9 +4,6 @@ set -e
 
 VERSION=${1}
 
-# shellcheck source=/dev/null
-CODENAME=$(. /etc/os-release && echo "${VERSION_CODENAME}")
-
 NAME=skopeo
 ARCH=$(uname -p)
 
@@ -24,7 +21,7 @@ function check_semver () {
 }
 
 
-echo "Building ${NAME} ${VERSION} for ${CODENAME}"
+echo "Building ${NAME} ${VERSION} for ${ARCH}"
 git checkout --force "v${VERSION}"
 DISABLE_DOCS=1 CGO_ENABLED=0 make BUILDTAGS=containers_image_openpgp GO_DYN_FLAGS= bin/skopeo
 mkdir -p "/usr/local/${NAME}/${VERSION}/bin"
@@ -33,5 +30,5 @@ cp bin/skopeo "/usr/local/${NAME}/${VERSION}/bin/"
 /usr/local/${NAME}/"${VERSION}"/bin/skopeo --version
 /usr/local/${NAME}/"${VERSION}"/bin/skopeo inspect docker://registry.fedoraproject.org/fedora:latest | jq -r '.Name+"@"+.Digest'
 
-echo "Compressing ${NAME} ${VERSION} for ${CODENAME}-${ARCH}"
-tar -cJf /cache/${NAME}-"${VERSION}"-"${CODENAME}"-"${ARCH}".tar.xz -C /usr/local/${NAME} "${VERSION}"
+echo "Compressing ${NAME} ${VERSION} for ${ARCH}"
+tar -cJf /cache/${NAME}-"${VERSION}"-"${ARCH}".tar.xz -C /usr/local/${NAME} "${VERSION}"

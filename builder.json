@@ -3,7 +3,7 @@
   "depName": "containers/skopeo",
   "datasource": "github-releases",
   "versioning": "semver",
-  "startVersion": "1.8.0",
+  "startVersion": "1.14.0",
   "extractVersion": "^v(?<version>\\d+\\.\\d+\\.\\d+)$",
   "ignoredVersions": []
 }

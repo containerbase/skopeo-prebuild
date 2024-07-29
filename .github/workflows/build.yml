@@ -49,11 +49,9 @@ jobs:
 
     strategy:
       matrix:
-        distro: [focal]
         arch: [x86_64]
 
     env:
-      DISTRO: ${{ matrix.distro }} # build target, name required by binary-builder
       ARCH: ${{ matrix.arch }} # build target, name required by binary-builder
 
     permissions:

@@ -5,7 +5,7 @@ ENTRYPOINT [ "dumb-init", "--", "builder.sh" ]
 COPY bin /usr/local/sbin
 
 # renovate: datasource=golang-version
-RUN install-tool golang 1.22.5
+RUN install-tool golang 1.22.6
 
 RUN install-builder.sh
 

@@ -1,10 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "visualon/renovate-config",
-    "visualon/renovate-config:automergePatch",
-    ":automergeMinor"
-  ],
+  "extends": ["local>containerbase/.github"],
   "packageRules": [
     {
       "matchPackageNames": ["containers/skopeo"],

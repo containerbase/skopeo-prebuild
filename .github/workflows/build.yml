@@ -26,7 +26,7 @@ jobs:
           save-cache: true
 
       - name: lint
-        run: pnpm prettier
+        run: pnpm oxfmt
 
   build:
     needs:

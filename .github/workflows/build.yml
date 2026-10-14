@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - 'renovate/**'
 
   pull_request:
 
@@ -17,7 +16,11 @@ permissions:
 
 jobs:
   lint:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-slim
+    env:
+      # node and pnpm come from the setup action, so `mise exec` must not
+      # install them again
+      MISE_EXEC_AUTO_INSTALL: 'false'
 
     steps:
       - name: ⚙️ Setup
@@ -27,10 +30,19 @@ jobs:
 
       - name: lint
         run: pnpm oxfmt
-      - name: Check workflow files
-        uses: docker://ghcr.io/jdx/jactionlint:1.8.2@sha256:5515b269082f92ee0962ccc236df3300113aedcd4008a2aad5ad0903680b7c67
+
+      - name: Install the workflow linters
+        uses: jdx/mise-action@08ae2a091c038e1e05ec6f5115dc5c69d5a2a6b8 # v5.1.2
         with:
-          args: --color
+          install_args: jactionlint shellcheck zizmor
+
+      - name: Check workflow files
+        run: mise exec -- jactionlint --color
+
+      - name: Run zizmor
+        run: mise exec -- zizmor --format github .github/
+        env:
+          GH_TOKEN: ${{ github.token }}
 
   build:
     needs:
@@ -55,6 +67,7 @@ jobs:
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
+          persist-credentials: false
           show-progress: false
 
       - name: binary-builder
@@ -65,7 +78,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
   success:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-slim
     needs:
       - lint
       - build

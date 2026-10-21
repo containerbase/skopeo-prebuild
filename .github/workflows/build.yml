@@ -17,6 +17,7 @@ permissions:
 jobs:
   lint:
     runs-on: ubuntu-slim
+    timeout-minutes: 10
     permissions:
       contents: read
       checks: write # shellcheck annotations
@@ -68,6 +69,7 @@ jobs:
     needs:
       - lint
     runs-on: ${{ matrix.arch.os }}
+    timeout-minutes: 60
     name: build (${{ matrix.arch.name }})
 
     permissions:
